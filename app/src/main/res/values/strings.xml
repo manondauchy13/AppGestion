@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AppGestion</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="tel">Tel</string>
+    <string name="nom">Nom</string>
+    <string name="email">Email</string>
 </resources>

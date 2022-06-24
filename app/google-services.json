@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "747005530892",
+    "project_id": "appgestion-da3dc",
+    "storage_bucket": "appgestion-da3dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747005530892:android:0fd772f132935c781b6f29",
+        "android_client_info": {
+          "package_name": "fr.appgestion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747005530892-vsrh133kod9t7cvlv5crufc073keqpih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABfWgTCpDrNilHeJBtbMKjLkH_vJ4aXVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747005530892-vsrh133kod9t7cvlv5crufc073keqpih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
