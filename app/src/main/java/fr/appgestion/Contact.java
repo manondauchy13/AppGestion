@@ -10,16 +10,16 @@ public class Contact {
     private long id;
     private String  nom;
     private String tel;
-    private String email;
+    private String com;
 
     public Contact(){
 
     }
 
-    public Contact(String nom, String tel, String email) {
+    public Contact(String nom, String tel, String com) {
         this.nom = nom;
         this.tel = tel;
-        this.email = email;
+        this.com = com;
     }
 
     public long getId() {
@@ -47,12 +47,12 @@ public class Contact {
         this.tel = tel;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCom() {
+        return com;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCom(String com) {
+        this.com = com;
     }
 
 

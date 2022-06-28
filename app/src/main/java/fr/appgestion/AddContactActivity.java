@@ -18,7 +18,7 @@ public class AddContactActivity extends AppCompatActivity {
 
     TextInputEditText mNom;
     TextInputEditText mTel;
-    TextInputEditText mEmail;
+    TextInputEditText mCom;
     Button btnSave;
 
     FirebaseFirestore db;
@@ -34,7 +34,7 @@ public class AddContactActivity extends AppCompatActivity {
 
         mNom=findViewById(R.id.input_nom);
         mTel=findViewById(R.id.input_tel);
-        mEmail=findViewById(R.id.input_email);
+        mCom=findViewById(R.id.input_com);
         btnSave=findViewById(R.id.btn_save);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -42,17 +42,35 @@ public class AddContactActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final String nom=mNom.getText().toString();
                 final String tel=mTel.getText().toString();
-                final String email=mEmail.getText().toString();
+                final String com=mCom.getText().toString();
+
+                if  (nom.isEmpty()){
+                    mNom.setError("Champ obligatoire");
+                    return;
+                }
+
+                if  (tel.isEmpty()){
+                    mTel.setError("Champ obligatoire");
+                    return;
+                }
+
+                if  (com.isEmpty()){
+                    mCom.setError("Champ obligatoire");
+                    return;
+                }
 
                 CollectionReference colRef=db.collection("Contact");
 
-                Contact contact=new Contact("Manuel","+3367373737","manuel@sfr.fr");
+                Contact contact=new Contact(nom,tel,com);
 
                 colRef.document().set(contact).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if ((task.isSuccessful())){
                             Toast.makeText(getApplicationContext(),"Données ajouté avec succès", Toast.LENGTH_LONG).show();
+                        mNom.setText("");
+                        mCom.setText("");
+                        mTel.setText("");
                         } else {
                             Toast.makeText(getApplicationContext(), "Erreur", Toast.LENGTH_LONG).show();
                         }
@@ -61,4 +79,5 @@ public class AddContactActivity extends AppCompatActivity {
             }
         });
     }
+
 }
