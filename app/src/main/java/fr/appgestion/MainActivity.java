@@ -31,7 +31,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
-
     FirebaseFirestore db;
     MyAdapter adapter;
     RecyclerView mRecyclerView;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         FirestoreRecyclerOptions<Contact> options= new FirestoreRecyclerOptions.Builder<Contact>()
                 .setQuery(query, Contact.class).build();
 
-adapter=new MyAdapter(options);
+        adapter=new MyAdapter(options);
 
 
         mRecyclerView.setAdapter(adapter);
@@ -89,7 +88,7 @@ adapter=new MyAdapter(options);
     {
         CollectionReference collRef= db.collection("Contact");
 
-        Query query=collRef.orderBy("nom");
+        Query query=collRef.orderBy("nom").startAt(s).endAt(s+"\uf8ff");
 
         FirestoreRecyclerOptions<Contact> options= new FirestoreRecyclerOptions.Builder<Contact>()
                 .setQuery(query, Contact.class).build();

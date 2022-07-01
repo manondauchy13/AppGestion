@@ -6,13 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddContactActivity extends AppCompatActivity {
 
@@ -68,9 +75,9 @@ public class AddContactActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if ((task.isSuccessful())){
                             Toast.makeText(getApplicationContext(),"Données ajouté avec succès", Toast.LENGTH_LONG).show();
-                        mNom.setText("");
-                        mCom.setText("");
-                        mTel.setText("");
+                            mNom.setText("");
+                            mCom.setText("");
+                            mTel.setText("");
                         } else {
                             Toast.makeText(getApplicationContext(), "Erreur", Toast.LENGTH_LONG).show();
                         }

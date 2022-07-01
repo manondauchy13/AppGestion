@@ -1,18 +1,13 @@
 package fr.appgestion;
 
 
-import com.google.firebase.firestore.Exclude;
-
 public class Contact {
 
-@Exclude
 
-    private long id;
-    private String  nom;
-    private String tel;
-    private String com;
+    long id;
+    String nom,com,tel;
 
-    public Contact(){
+  Contact(){
 
     }
 
@@ -26,7 +21,7 @@ public class Contact {
         return id;
     }
 
-    @Exclude
+
     public void setId(long id) {
         this.id = id;
     }
